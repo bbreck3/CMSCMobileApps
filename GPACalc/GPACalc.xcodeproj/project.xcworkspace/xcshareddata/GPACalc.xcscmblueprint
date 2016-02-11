@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "601F7B7677C4A5DC2963BC26D9FA0E2294C0D80C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D4C8AEDB3882C2232AD1F7AC116181C985FC1E82" : 0,
+    "601F7B7677C4A5DC2963BC26D9FA0E2294C0D80C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "839AB7B5-5F33-4C21-989E-E7CDA2A7042C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D4C8AEDB3882C2232AD1F7AC116181C985FC1E82" : "",
+    "601F7B7677C4A5DC2963BC26D9FA0E2294C0D80C" : "CMSCMobileApps\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GPACalc",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GPACalc\/GPACalc.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bbreck3\/CMSCMobileApps.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "601F7B7677C4A5DC2963BC26D9FA0E2294C0D80C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bbreck3\/CMSCMobileApps.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4C8AEDB3882C2232AD1F7AC116181C985FC1E82"
+    }
+  ]
+}
