@@ -25,6 +25,11 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        /* Implemtented Code goes here */
+        
+        
+        
     }
 
     override func viewWillAppear(animated: Bool) {

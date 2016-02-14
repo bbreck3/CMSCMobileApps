@@ -7,14 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D469618A1C68210A00E6ACAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46961891C68210A00E6ACAF /* AppDelegate.swift */; };
-		D469618C1C68210A00E6ACAF /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469618B1C68210A00E6ACAF /* MasterViewController.swift */; };
-		D469618E1C68210A00E6ACAF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469618D1C68210A00E6ACAF /* DetailViewController.swift */; };
-		D46961911C68210A00E6ACAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D469618F1C68210A00E6ACAF /* Main.storyboard */; };
-		D46961931C68210A00E6ACAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D46961921C68210A00E6ACAF /* Assets.xcassets */; };
-		D46961961C68210A00E6ACAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46961941C68210A00E6ACAF /* LaunchScreen.storyboard */; };
 		D46961A11C68210A00E6ACAF /* GPACalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46961A01C68210A00E6ACAF /* GPACalcTests.swift */; };
 		D46961AC1C68210A00E6ACAF /* GPACalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46961AB1C68210A00E6ACAF /* GPACalcUITests.swift */; };
+		D48BEA8D1C6ED7AA001F341A /* GPACalc in Resources */ = {isa = PBXBuildFile; fileRef = D48BEA8C1C6ED7AA001F341A /* GPACalc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +31,13 @@
 
 /* Begin PBXFileReference section */
 		D46961861C68210A00E6ACAF /* GPACalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPACalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D46961891C68210A00E6ACAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D469618B1C68210A00E6ACAF /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		D469618D1C68210A00E6ACAF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		D46961901C68210A00E6ACAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D46961921C68210A00E6ACAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D46961951C68210A00E6ACAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D46961971C68210A00E6ACAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D469619C1C68210A00E6ACAF /* GPACalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPACalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46961A01C68210A00E6ACAF /* GPACalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPACalcTests.swift; sourceTree = "<group>"; };
 		D46961A21C68210A00E6ACAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46961A71C68210A00E6ACAF /* GPACalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPACalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46961AB1C68210A00E6ACAF /* GPACalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPACalcUITests.swift; sourceTree = "<group>"; };
 		D46961AD1C68210A00E6ACAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48BEA8C1C6ED7AA001F341A /* GPACalc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GPACalc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +68,7 @@
 		D469617D1C68210900E6ACAF = {
 			isa = PBXGroup;
 			children = (
-				D46961881C68210A00E6ACAF /* GPACalc */,
+				D48BEA8C1C6ED7AA001F341A /* GPACalc */,
 				D469619F1C68210A00E6ACAF /* GPACalcTests */,
 				D46961AA1C68210A00E6ACAF /* GPACalcUITests */,
 				D46961871C68210A00E6ACAF /* Products */,
@@ -94,20 +83,6 @@
 				D46961A71C68210A00E6ACAF /* GPACalcUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D46961881C68210A00E6ACAF /* GPACalc */ = {
-			isa = PBXGroup;
-			children = (
-				D46961891C68210A00E6ACAF /* AppDelegate.swift */,
-				D469618B1C68210A00E6ACAF /* MasterViewController.swift */,
-				D469618D1C68210A00E6ACAF /* DetailViewController.swift */,
-				D469618F1C68210A00E6ACAF /* Main.storyboard */,
-				D46961921C68210A00E6ACAF /* Assets.xcassets */,
-				D46961941C68210A00E6ACAF /* LaunchScreen.storyboard */,
-				D46961971C68210A00E6ACAF /* Info.plist */,
-			);
-			path = GPACalc;
 			sourceTree = "<group>";
 		};
 		D469619F1C68210A00E6ACAF /* GPACalcTests */ = {
@@ -234,9 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46961961C68210A00E6ACAF /* LaunchScreen.storyboard in Resources */,
-				D46961931C68210A00E6ACAF /* Assets.xcassets in Resources */,
-				D46961911C68210A00E6ACAF /* Main.storyboard in Resources */,
+				D48BEA8D1C6ED7AA001F341A /* GPACalc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +234,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D469618E1C68210A00E6ACAF /* DetailViewController.swift in Sources */,
-				D469618C1C68210A00E6ACAF /* MasterViewController.swift in Sources */,
-				D469618A1C68210A00E6ACAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,25 +267,6 @@
 			targetProxy = D46961A81C68210A00E6ACAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D469618F1C68210A00E6ACAF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D46961901C68210A00E6ACAF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D46961941C68210A00E6ACAF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D46961951C68210A00E6ACAF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D46961AE1C68210A00E6ACAF /* Debug */ = {
@@ -488,6 +439,7 @@
 				D46961B21C68210A00E6ACAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D46961B31C68210A00E6ACAF /* Build configuration list for PBXNativeTarget "GPACalcTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +448,7 @@
 				D46961B51C68210A00E6ACAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D46961B61C68210A00E6ACAF /* Build configuration list for PBXNativeTarget "GPACalcUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +457,7 @@
 				D46961B81C68210A00E6ACAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

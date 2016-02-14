@@ -16,7 +16,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GPACalc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GPACalc2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZZu-u7-qc7"/>
                         <viewControllerLayoutGuide type="bottom" id="Bi0-I8-4kf"/>
@@ -33,7 +33,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="deleteCrs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8uR-gr-F14"/>
+                                    <action selector="delCrs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jr-O7-liV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" fixedFrame="YES" text="GPA Calculate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvw-m2-MWr" userLabel="LAppName">
@@ -86,7 +86,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="addCrs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4QK-0v-OPd"/>
+                                    <action selector="addCrs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xDt-YJ-OUn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Assignment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-xz-RbJ" userLabel="LAssignment">
@@ -120,11 +120,6 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ex-tn-mFI" userLabel="TFAssPoints">
                                 <rect key="frame" x="124" y="134" width="60" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UA5-BO-Hpn" userLabel="TFAssMax">
-                                <rect key="frame" x="190" y="134" width="55" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -197,30 +192,30 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UA5-BO-Hpn" userLabel="TFAssMax">
+                                <rect key="frame" x="190" y="134" width="55" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="assTypeMax" destination="UA5-BO-Hpn" id="Cvi-nd-Yzj"/>
-                        <outlet property="assTypePts" destination="6ex-tn-mFI" id="oc4-IL-diA"/>
-                        <outlet property="assTypeWeight" destination="VAI-Yq-Ueb" id="oJv-XP-SdQ"/>
-                        <outlet property="crsInfo1" destination="QZP-xu-xcb" id="Lwf-SN-ykd"/>
-                        <outlet property="crsInfo2" destination="WhK-de-gfT" id="2V7-xz-lzh"/>
-                        <outlet property="crsInfo3" destination="BMg-K6-fxa" id="CMx-yt-g1f"/>
-                        <outlet property="crsInfo4" destination="EM9-J9-ttZ" id="FoS-Ez-cFq"/>
-                        <outlet property="crsTitle" destination="PzW-ar-6JI" id="yLc-8i-rkf"/>
-                        <outlet property="crsTittle" destination="PzW-ar-6JI" id="CBG-pz-elY"/>
-                        <outlet property="finalMax" destination="Zfe-gM-Cvy" id="idd-hO-SwG"/>
-                        <outlet property="finalPts" destination="EWh-Zd-e3p" id="aCA-2O-PWy"/>
-                        <outlet property="finalWeight" destination="Coa-ce-nfZ" id="iIE-HA-MlB"/>
-                        <outlet property="getCrsTitle" destination="PzW-ar-6JI" id="V0q-Uz-Fh6"/>
-                        <outlet property="main" destination="Kvw-m2-MWr" id="sYd-qI-G5V"/>
-                        <outlet property="maxLabel" destination="Lzf-Lg-bPv" id="sA9-a8-Bny"/>
-                        <outlet property="midTermMax" destination="HTq-iD-TdP" id="ZHs-jJ-dAd"/>
-                        <outlet property="midTermPts" destination="D1y-T5-UQw" id="fQ0-js-1A7"/>
-                        <outlet property="midTermWeight" destination="n61-hM-qor" id="tZt-Ma-MBt"/>
-                        <outlet property="minLabel" destination="tMk-4A-hkM" id="XCE-t7-50A"/>
-                        <outlet property="numCredits" destination="WDg-tz-7oE" id="sBd-eS-AAQ"/>
+                        <outlet property="LCrs1" destination="QZP-xu-xcb" id="ScU-h9-YXP"/>
+                        <outlet property="LCrs2" destination="WhK-de-gfT" id="n5Y-zh-6nQ"/>
+                        <outlet property="LCrs3" destination="BMg-K6-fxa" id="ZYz-B8-tQz"/>
+                        <outlet property="LCrs4" destination="EM9-J9-ttZ" id="Q3e-EB-Vk7"/>
+                        <outlet property="assTypeMax" destination="UA5-BO-Hpn" id="b5u-xg-SSe"/>
+                        <outlet property="assTypePts" destination="6ex-tn-mFI" id="m4F-uf-tRQ"/>
+                        <outlet property="assTypeWeight" destination="VAI-Yq-Ueb" id="PTc-8R-F0G"/>
+                        <outlet property="crsTitle" destination="PzW-ar-6JI" id="reg-D1-2qi"/>
+                        <outlet property="finalMax" destination="Zfe-gM-Cvy" id="22z-EN-hy2"/>
+                        <outlet property="finalPrc" destination="Coa-ce-nfZ" id="D4G-Fq-qkl"/>
+                        <outlet property="finalPts" destination="EWh-Zd-e3p" id="aW1-wu-Pvq"/>
+                        <outlet property="midTermMax" destination="HTq-iD-TdP" id="gTI-gJ-LGW"/>
+                        <outlet property="midTermPts" destination="D1y-T5-UQw" id="gpk-FM-69O"/>
+                        <outlet property="midTermWeight" destination="n61-hM-qor" id="o9u-o8-wc4"/>
+                        <outlet property="numCreds" destination="WDg-tz-7oE" id="x6r-oU-UXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
