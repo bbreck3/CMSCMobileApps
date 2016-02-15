@@ -76,8 +76,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(tapRecognizer)
         
         //sets the classCounter Label to the current count: on load should be zero
+        //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter) --> if ever needs to be debugged again: uncomment 
+                                                                                        // reference classCounterDbg.text = <varName> where ever
+                                                                                        // in the code needed for debugging purposes
         
-        //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+        //sets the classCounterDbg label to empty to take it off the screen when not needed for debugging:
+        //I could simply delete are the reference in the code but if the error has to be debugged again in the future then the implimentation is 
+        //already there, so I it easier to simply set it to invisible by assigned it to the null string "". Besides: this is easier on my end:
+        // dont want to go through the code and delete all the refeerences anyway haha ;P
+        classCounterDbg.text="";
+        
+        //sets all of the course labels to null on load as to prevent from appearing as a blank label on start. as coarses are added, the labels will be updated occordingly in the code below
+        LCrs1.text = "";
+        LCrs2.text = "";
+        LCrs3.text = "";
+        LCrs4.text = "";
+        
         
         }
 
@@ -385,9 +399,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    //function used as a test to ensure that the alertcontroller was function correctly withoutt the addition of the add and delete course code
+    //was simply to test a plain vanila UIAlerController and make sure it was functioning properly
     
+    //currently not visible: color is set to white to match the background color to give the illusion of invisible.
+    //to use for debguging simply go to the setting and change the color from:
+    // "white" to "blue" or whatever color you wish....
+    //invisible color apt to change as color to accomplish this goal is subject to the
+    //current background color. If the background color is changed, then the color of the button will have to be update occordinly to keep it invisibility
     @IBAction func showAlert(sender: UIButton) {
         
+    
         let alertTitle = "Alert"
         let alertMessage = "Debug: Testing Alert Functionality!"
         let alertOkButtonText = "Ok"
