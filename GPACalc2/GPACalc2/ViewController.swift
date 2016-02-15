@@ -32,6 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LCrs3: UILabel!
     @IBOutlet weak var LCrs4: UILabel!
     
+    //array of the objects:
+    //var classArr = [LCrs1.text,LCrs2,LCrs3,LCrs4];
     
    
     //counter for the labels: keeps track of how many classes have been addded
@@ -75,7 +77,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //sets the classCounter Label to the current count: on load should be zero
         
-        classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+        //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
         
         }
 
@@ -141,7 +143,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //input has passed the inputCheck validation and thus all input is valid so increment the classCounter by 1
         
             classCounter+=1;
-            classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+            //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
             //calculate gpa
             gpa = calcGPA();
             
@@ -151,7 +153,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //                                                   4 --> fourth courses added
             //                                                    courses will be deleted in the order the were added by the course count: if the current count is 2 then course two will be deleted
             //max 4 course as per instructions so cases stop at 4
-            switch classCounter {
+            
+            
+            
+            if(classCounter==1){
+                LCrs1.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+                print("Debug " + String(format: "%d",classCounter));
+                return;
+            } else if(classCounter==2){
+                LCrs2.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+                print("Debug " + String(format: "%d",classCounter));
+                return;
+            } else if(classCounter==3){
+                LCrs3.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+                print("Debug " + String(format: "%d",classCounter));
+                return;
+            } else {
+                LCrs4.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+                print("Debug " + String(format: "%d",classCounter));
+                return;
+            } //end if else chain
+
+            
+            /**
+                    Switches are great but  I could not get them to work so  I used an if else chain instead...
+            */
+            
+            
+            /*switch classCounter {
             case 1://Course 1
                 LCrs1.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
                 return;
@@ -167,7 +200,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             default:
                 print("Debug: --> Only for courses! No other options...")
-            }// end switch
+            }// end switch*/
             
             
         } // end if else chain
@@ -204,31 +237,59 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
             //reset the counter to zero to veriffy the the next increment in the chain starts from zero
             //classCounter=0;
-            classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+            //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
             return;
 
         } else {
             //decrement the number of total courses as one is about to be deleted
-            classCounter-=1
+            
+            //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
         //if class count is between 1 & 3 then select the course to be deleted, and reset its label to blank
         
             if(classCounter==1){
                 LCrs1.text = "";
+                classCounter-=1
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
+                
                 return;
             } else if(classCounter==2){
                 LCrs2.text = "";
+                classCounter-=1
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
+                
                     return;
             } else if(classCounter==3){
                 LCrs3.text = "";
+                classCounter-=1
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
+                
+                return;
+            } else if (classCounter==4){
+                LCrs4.text = "";
+                classCounter-=1
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
+                print("Debug " + String(format: "%d",classCounter));
+                
                 return;
             } else {
-                LCrs4.text = "";
+                //do nothing--no such case
+                //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
                 return;
             } //end if else chain
+            
+            
+            
+            
+            /**
+             Switches are great but  I could not get them to work so  I used an if else chain instead...
+             */
+
+            
+            
             /*switch classCounter {
         case 1://Course 1
             LCrs1.text = "";
@@ -283,6 +344,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //calculates GPA
     func calcGPA() -> Float{
+        
+        
+        /**
+            All UI and testing functionality seem to be good and holds stable (working)
+            All that is left to do is correctly impliment the corrct logic for for gpa calculation:
+            currently any valid numbers and mathical operatins work....but it may not make sence for a gpa to be 198.45....
+         
+            ---> correct gpa logic and 
+            ---> after that the only thing left to do is include aesthetics...picture and correct colors...etc
+ 
+        */
+        
+        
+        
+        
         //varibles for the assignment sum grade, midTerm grade, final grade, and the calculated gpa using the previous variables
         var gpa, assSum, midTerm, final: Float;
         
