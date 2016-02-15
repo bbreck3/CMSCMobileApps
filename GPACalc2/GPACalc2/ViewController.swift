@@ -32,7 +32,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LCrs3: UILabel!
     @IBOutlet weak var LCrs4: UILabel!
     
-    //array of the objects:
+    //Course Color Labels:
+    @IBOutlet weak var crs1color: UILabel!
+    @IBOutlet weak var crs2color: UILabel!
+    @IBOutlet weak var crs3color: UILabel!
+    @IBOutlet weak var crs4color: UILabel!
+    
+     //array of the objects:
     //var classArr = [LCrs1.text,LCrs2,LCrs3,LCrs4];
     
    
@@ -92,6 +98,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         LCrs3.text = "";
         LCrs4.text = "";
         
+        //Ensures that the course color label does not display unless add and removal will be handled with the delete course method
+        crs1color.text = ""
+        crs2color.text = ""
+        crs3color.text = ""
+        crs4color.text = ""
+        
         
         }
 
@@ -106,8 +118,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addCrs(sender: UIButton) {
         //print("Add Test") --> Test was successfull
         
-        //variable to hold the currentyl calculated gpa
-        var gpa: Float;
+        //variable to hold the currentyl calculated courseCrade
+        var grade: Float;
         
         
        
@@ -193,7 +205,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             classCounter+=1;
             //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
             //calculate gpa
-            gpa = calcGPA();
+            grade = calcGPA();
             
             //output gpa result to UI in order of class counter: 1 --> the first course added
             //                                                   2 --> second courses added
@@ -203,24 +215,110 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //max 4 course as per instructions so cases stop at 4
             
             
+            var color: String;
+            var letter: String;
+            var LGrade: String;
+            if(grade >= 90){
+                    color = "green";
+                    letter = "A";
+                
+                //ensures the right color goes to the right label
+                if(classCounter==1){
+                    crs1color.text =  letter;
+                    crs1color.textColor = UIColor.greenColor();
+                } else if(classCounter==2){
+                    crs2color.text = letter;
+                    crs2color.textColor = UIColor.greenColor();
+                } else if(classCounter==3){
+                    crs3color.text = letter;
+                    crs3color.textColor = UIColor.greenColor();
+                } else {
+                    crs4color.text = letter;
+                    crs4color.textColor = UIColor.greenColor();  }
+                
+            } else if( grade <= 89.9 || grade >= 80 ){
+                    color = "orange";
+                    letter = "B";
+                //ensures the right color goes to the right label
+                if(classCounter==1){
+                    crs1color.text = letter;
+                    crs1color.textColor = UIColor.orangeColor();
+                } else if(classCounter==2){
+                    crs2color.text = letter;
+                    crs2color.textColor = UIColor.orangeColor();
+                } else if(classCounter==3){
+                    crs3color.text = letter;
+                    crs3color.textColor = UIColor.orangeColor();
+                } else {
+                    crs4color.text = letter;
+                    crs4color.textColor = UIColor.orangeColor();  }
+            } else if( grade <= 79.9 || grade >= 70 ){
+                    color = "orange";
+                    letter = "C";
+                //ensures the right color goes to the right label
+                if(classCounter==1){
+                    crs1color.text = letter;
+                    crs1color.textColor = UIColor.orangeColor();
+                } else if(classCounter==2){
+                    crs2color.text = letter;
+                    crs2color.textColor = UIColor.orangeColor();
+                } else if(classCounter==3){
+                    crs3color.text = letter;
+                    crs3color.textColor = UIColor.orangeColor();
+                } else {
+                    crs4color.text = letter;
+                    crs4color.textColor = UIColor.orangeColor();  }
+            } else if( grade <= 69.9 || grade >= 60 ){
+                    color = "organge";
+                    letter = "D";
+                //ensures the right color goes to the right label
+                if(classCounter==1){
+                    crs1color.text = letter;
+                    crs1color.textColor = UIColor.orangeColor();
+                } else if(classCounter==2){
+                    crs2color.text = letter;
+                    crs2color.textColor = UIColor.orangeColor();
+                } else if(classCounter==3){
+                    crs3color.text = letter;
+                    crs3color.textColor = UIColor.orangeColor();
+                } else {
+                    crs4color.text = letter;
+                    crs4color.textColor = UIColor.orangeColor();  }
+            } else {
+                color = "red";
+                letter = "F";
+                //ensures the right color goes to the right label
+                if(classCounter==1){
+                    crs1color.text = letter;
+                    crs1color.textColor = UIColor.orangeColor();
+                } else if(classCounter==2){
+                    crs2color.text = letter;
+                    crs2color.textColor = UIColor.orangeColor();
+                } else if(classCounter==3){
+                    crs3color.text = letter;
+                    crs3color.textColor = UIColor.orangeColor();
+                } else {
+                    crs4color.text = letter;
+                    crs4color.textColor = UIColor.orangeColor();  }
+            }
             
             if(classCounter==1){
-                LCrs1.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                LCrs1.text = crsTitle.text! + " " + String(format: "%.2f",grade)
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
                 return;
             } else if(classCounter==2){
-                LCrs2.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                LCrs2.text = crsTitle.text! + " " + String(format: "%.2f",grade)
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
                 return;
             } else if(classCounter==3){
-                LCrs3.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                LCrs3.text = crsTitle.text! + " " + String(format: "%.2f",grade)
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
                 return;
             } else {
-                LCrs4.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
+                LCrs4.text = crsTitle.text! + " " + String(format: "%.2f",grade)
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
                 return;
@@ -296,6 +394,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
             if(classCounter==1){
                 LCrs1.text = "";
+                crs1color.text = ""
                 classCounter-=1
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
@@ -303,6 +402,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 return;
             } else if(classCounter==2){
                 LCrs2.text = "";
+                crs2color.text = ""
                 classCounter-=1
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
@@ -310,6 +410,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     return;
             } else if(classCounter==3){
                 LCrs3.text = "";
+                crs3color.text = ""
                 classCounter-=1
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
@@ -317,6 +418,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 return;
             } else if (classCounter==4){
                 LCrs4.text = "";
+                crs4color.text = ""
                 classCounter-=1
                 //classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
                 print("Debug " + String(format: "%d",classCounter));
