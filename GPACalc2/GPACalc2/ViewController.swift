@@ -374,20 +374,56 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         //varibles for the assignment sum grade, midTerm grade, final grade, and the calculated gpa using the previous variables
-        var gpa, assSum, midTerm, final: Float;
+        var assSum, midTerm, final, assWeight, midTerm_WeightF, finalWeight,courseGrade: Float;
         
+        
+        /**
+            1: Assignement Calculation
+         
+        */
         //calculates the assignment grade
-        assSum = ((assTypePts.text! as NSString).floatValue / (assTypeMax.text! as NSString).floatValue) * (assTypeWeight.text! as NSString).floatValue;
+        assSum = ((assTypePts.text! as NSString).floatValue / (assTypeMax.text! as NSString).floatValue)
+        
+        //calculates the assigment total with  the weight of the assignment
+        assWeight=assSum * (assTypeWeight.text! as NSString).floatValue;
+        
+        
+        /**
+         2: MidTerm Calculation
+         
+         */
+
         
         //calculates the mid term grade
-        midTerm = ((midTermPts.text! as NSString).floatValue / (midTermMax.text! as NSString).floatValue) * (midTermWeight.text! as NSString).floatValue;
+        midTerm = ((midTermPts.text! as NSString).floatValue / (midTermMax.text! as NSString).floatValue)
+        //calculates the mide term total with  the weight of the total
+        midTerm_WeightF=midTerm * (midTermWeight.text! as NSString).floatValue;
+        
+        
+        /**
+         3: Final Calculation
+         
+         */
+
         
         //calculats the final grade
-        final = ((finalPts.text! as NSString).floatValue / (finalMax.text! as NSString).floatValue) * (finalPrc.text! as NSString).floatValue;
+        final = ((finalPts.text! as NSString).floatValue / (finalMax.text! as NSString).floatValue)
+         //calculates the final total with  the weight of the final
+        finalWeight = final * (finalPrc.text! as NSString).floatValue;
+
         
-        gpa = assSum + midTerm + final;
         
-        return gpa
+        //calculate the total course average as the sum of the above calculations:
+        // more specifically:
+        
+        //     courseGrade =
+        //                  assWeight +
+        //                  midTermWeightF +
+        //                  finalWeight +
+        //
+        courseGrade = assWeight + midTerm_WeightF + finalWeight;
+        
+        return courseGrade;
         
     }
     
