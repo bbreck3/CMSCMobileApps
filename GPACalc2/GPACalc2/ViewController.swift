@@ -32,14 +32,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LCrs3: UILabel!
     @IBOutlet weak var LCrs4: UILabel!
     
+    
+   
     //counter for the labels: keeps track of how many classes have been addded
     var classCounter: Int = 0;
+    
+    /**
+            Debugging Variables & UI Eelements:
+     */
+    @IBOutlet weak var classCounterDbg: UILabel!
+    
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Does any additional setup after loading the view, typically from a nib.
         
         //sets the enity of the textfield to refer to itself as to enable to self referential call the resignFirstResonder functions to enable the exiting of the keyboard on "return" pressed. 
         
@@ -63,6 +72,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: "didTapView")
         self.view.addGestureRecognizer(tapRecognizer)
+        
+        //sets the classCounter Label to the current count: on load should be zero
+        
+        classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
         
         }
 
@@ -128,6 +141,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //input has passed the inputCheck validation and thus all input is valid so increment the classCounter by 1
         
             classCounter+=1;
+            classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
             //calculate gpa
             gpa = calcGPA();
             
@@ -139,16 +153,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //max 4 course as per instructions so cases stop at 4
             switch classCounter {
             case 1://Course 1
-                LCrs1.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                LCrs1.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
                 return;
             case 2: //Course 2
-                LCrs2.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                LCrs2.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
                 return;
             case 3: //Course 3
-                LCrs3.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                LCrs3.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
                 return;
             case 4: //Course 4
-                LCrs4.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                LCrs4.text = crsTitle.text! + " GPA " + String(format: "%.2f",gpa)
                 return;
                 
             default:
@@ -189,14 +203,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
             presentViewController(alertController, animated: true, completion:nil)
 
             //reset the counter to zero to veriffy the the next increment in the chain starts from zero
-            classCounter=0;
+            //classCounter=0;
+            classCounterDbg.text = "Class Counter: " + String(format: "%d",classCounter)
             return;
 
-        }
+        } else {
+            //decrement the number of total courses as one is about to be deleted
+            classCounter-=1
         //if class count is between 1 & 3 then select the course to be deleted, and reset its label to blank
-        switch classCounter {
+        
+            if(classCounter==1){
+                LCrs1.text = "";
+                print("Debug " + String(format: "%d",classCounter));
+                return;
+            } else if(classCounter==2){
+                LCrs2.text = "";
+                print("Debug " + String(format: "%d",classCounter));
+                    return;
+            } else if(classCounter==3){
+                LCrs3.text = "";
+                print("Debug " + String(format: "%d",classCounter));
+                return;
+            } else {
+                LCrs4.text = "";
+                print("Debug " + String(format: "%d",classCounter));
+                return;
+            } //end if else chain
+            /*switch classCounter {
         case 1://Course 1
             LCrs1.text = "";
+            print("Debug");
             return;
         case 2: //Course 2
             LCrs2.text = "";
@@ -210,7 +246,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         default:
             print("Debug: -->Only for courses! No other options...")
-        }
+            classCounterDbg.text = "Debug: switch " + String(format: "%d",classCounter)
+        }*/// end switch
+        }//end if else chain
 
         
     

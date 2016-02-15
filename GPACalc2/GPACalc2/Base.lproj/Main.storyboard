@@ -191,6 +191,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-J9-ttZ" userLabel="LCrsInfo4">
+                                <rect key="frame" x="20" y="413" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWX-fF-zlX">
                                 <rect key="frame" x="44" y="294" width="33" height="30"/>
                                 <state key="normal" title="Alert"/>
@@ -198,10 +204,10 @@
                                     <action selector="showAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="adt-Xx-rdL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-J9-ttZ" userLabel="LCrsInfo4">
-                                <rect key="frame" x="20" y="413" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ClassCounter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmc-ll-UXY">
+                                <rect key="frame" x="142" y="298" width="143" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -215,6 +221,7 @@
                         <outlet property="assTypeMax" destination="UA5-BO-Hpn" id="b5u-xg-SSe"/>
                         <outlet property="assTypePts" destination="6ex-tn-mFI" id="m4F-uf-tRQ"/>
                         <outlet property="assTypeWeight" destination="VAI-Yq-Ueb" id="PTc-8R-F0G"/>
+                        <outlet property="classCounterDbg" destination="fmc-ll-UXY" id="bjg-iW-4O7"/>
                         <outlet property="crsTitle" destination="PzW-ar-6JI" id="reg-D1-2qi"/>
                         <outlet property="finalMax" destination="Zfe-gM-Cvy" id="22z-EN-hy2"/>
                         <outlet property="finalPrc" destination="Coa-ce-nfZ" id="D4G-Fq-qkl"/>
