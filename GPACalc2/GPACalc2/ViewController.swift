@@ -56,6 +56,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         finalPrc.delegate = self;
         numCreds.delegate = self;
         
+        //handles the case that the keyboard is in number pad mode, as the soultion
+        //standard keyboard only works if the "return" button is visible on the keypad...which is not
+        // on the numeric keypad
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapRecognizer)
+        
         }
 
     override func didReceiveMemoryWarning() {
@@ -282,6 +290,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    //handles the case that the keyboard is in number pad mode, as the soultion
+    //standard keyboard only works if the "return" button is visible on the keypad...which is not
+    // on the numeric keypad
+
+    //function that furher aids in the above commnent and extends from the code in the "viewDidLoad" method
+    func didTapView(){
+        self.view.endEditing(true)
+    }
     
     
     
