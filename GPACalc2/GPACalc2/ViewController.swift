@@ -38,6 +38,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var crs3color: UILabel!
     @IBOutlet weak var crs4color: UILabel!
     
+    //GPA Label:
+    @IBOutlet weak var gpaL: UILabel!
+    
+    
      //array of the objects:
     //var classArr = [LCrs1.text,LCrs2,LCrs3,LCrs4];
     
@@ -103,6 +107,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         crs2color.text = ""
         crs3color.text = ""
         crs4color.text = ""
+        
+        gpaL.text = "";
         
         
         }
