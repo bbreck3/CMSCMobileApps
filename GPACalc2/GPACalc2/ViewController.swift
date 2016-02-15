@@ -72,9 +72,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //variable to hold the currentyl calculated gpa
         var gpa: Float;
         
+        
+       
         //if any input is invalid: prompt user with a error dialog and then let them correct
         //their input
         if(checkInput()==false){
+            
+            //Alert to user that there input was invalid and to re check their input
             let alertTitle = "Alert"
             let alertMessage = "Invalid Input: Please check you input again!"
             let alertOkButtonText = "Ok"
@@ -87,34 +91,64 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                              handler: nil) //You can use a block here to handle a press on this button
                 
                 alertController.addAction(actionOk)
+                presentViewController(alertController, animated: true, completion:nil)
+            return;
+            // end invalid input alert
+            
+        } else if(classCounter>3){
+            
+            //Alert to user that no more courses could be added...the maximum course limit has been exceeded
+            let alertTitle = "Alert"
+            let alertMessage = "Max Course limit exceeded! Cannot add more courses!"
+            let alertOkButtonText = "Ok"
             
             
-                /*let alertView = UIAlertView(title: alertTitle, message: alertMessage, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: alertOkButtonText)
-                alertView.show()*/
+            let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            //We add buttons to the alert controller by creating UIAlertActions:
+            let actionOk = UIAlertAction(title: alertOkButtonText,
+                                         style: .Default,
+                                         handler: nil) //You can use a block here to handle a press on this button
+            
+            alertController.addAction(actionOk)
+            presentViewController(alertController, animated: true, completion:nil)
+            return;
+            //end max course limit exceeded alert
+            
             
         } else {
+            
         //input has passed the inputCheck validation and thus all input is valid so increment the classCounter by 1
         
             classCounter+=1;
+            //calculate gpa
             gpa = calcGPA();
             
+            //output gpa result to UI in order of class counter: 1 --> the first course added
+            //                                                   2 --> second courses added
+             //                                                  3 --> third courses added
+            //                                                   4 --> fourth courses added
+            //                                                    courses will be deleted in the order the were added by the course count: if the current count is 2 then course two will be deleted
             //max 4 course as per instructions so cases stop at 4
             switch classCounter {
             case 1://Course 1
                 LCrs1.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                return;
             case 2: //Course 2
                 LCrs2.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                return;
             case 3: //Course 3
                 LCrs3.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                return;
             case 4: //Course 4
                 LCrs4.text = crsTitle.text! + "GPA " + String(format: "%.2f",gpa)
+                return;
                 
             default:
-                print("Only for courses! No other options...")
-            }
+                print("Debug: --> Only for courses! No other options...")
+            }// end switch
             
             
-        }
+        } // end if else chain
     
     }
     
@@ -123,18 +157,51 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //print("Delete Test") --> Test was successfull
         
+        //output gpa result to UI in order of class counter: 1 --> the first course added
+        //                                                   2 --> second courses added
+        //                                                   3 --> third courses added
+        //                                                   4 --> fourth courses added
+        //                                                    courses will be deleted in the order the were added by the course count: if the current count is 2 then course two will be deleted
+        //max 4 course as per instructions so cases stop at 4
+        
+        //output error to user: cannout delete a coutse if it does not exist
+        if(classCounter==0){
+            let alertTitle = "Alert"
+            let alertMessage = "Cannot Delete Courses! No Courses to delete!"
+            let alertOkButtonText = "Ok"
+            
+            
+            let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            //We add buttons to the alert controller by creating UIAlertActions:
+            let actionOk = UIAlertAction(title: alertOkButtonText,
+                                         style: .Default,
+                                         handler: nil) //You can use a block here to handle a press on this button
+            
+            alertController.addAction(actionOk)
+            presentViewController(alertController, animated: true, completion:nil)
+
+            //reset the counter to zero to veriffy the the next increment in the chain starts from zero
+            classCounter=0;
+            return;
+
+        }
+        //if class count is between 1 & 3 then select the course to be deleted, and reset its label to blank
         switch classCounter {
         case 1://Course 1
-            LCrs1.text = ""
+            LCrs1.text = "";
+            return;
         case 2: //Course 2
-            LCrs2.text = ""
+            LCrs2.text = "";
+            return;
         case 3: //Course 3
-            LCrs3.text = ""
+            LCrs3.text = "";
+            return;
         case 4: //Course 4
-            LCrs4.text = ""
+            LCrs4.text = "";
+            return;
             
         default:
-            print("Only for courses! No other options...")
+            print("Debug: -->Only for courses! No other options...")
         }
 
         
@@ -143,27 +210,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //checks for valid input: Validity Defintion: Value must not be blank;
     func checkInput() -> Bool{
-        if(crsTitle.text==nil){
-            return false
-        } else if(assTypePts.text==nil){
-            return false
-        } else if(assTypeMax.text==nil){
-            return false
-        } else if(assTypeWeight.text==nil){
-            return false
-        } else if(midTermPts.text==nil){
-            return false
-        } else if(midTermMax.text==nil){
-            return false
-        } else if(midTermWeight.text==nil){
-            return false
-        } else if(finalPts.text==nil){
-            return false
-        } else if(finalMax.text==nil){
-            return false
-        } else if(finalPrc.text==nil){
-            return false
-        }; return true
+        if(crsTitle.text==""){
+            return false;
+        } else if(assTypePts.text==""){
+            return false;
+        } else if(assTypeMax.text==""){
+            return false;
+        } else if(assTypeWeight.text==""){
+            return false;
+        } else if(midTermPts.text==""){
+            return false;
+        } else if(midTermMax.text==""){
+            return false;
+        } else if(midTermWeight.text==""){
+            return false;
+        } else if(finalPts.text==""){
+            return false;
+        } else if(finalMax.text==""){
+            return false;
+        } else if(finalPrc.text==""){
+            return false;
+        }; return true;
         
     }
     
@@ -197,6 +264,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    @IBAction func showAlert(sender: UIButton) {
+        
+        let alertTitle = "Alert"
+        let alertMessage = "Debug: Testing Alert Functionality!"
+        let alertOkButtonText = "Ok"
+        
+        
+        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+        //We add buttons to the alert controller by creating UIAlertActions:
+        let actionOk = UIAlertAction(title: alertOkButtonText,
+                                     style: .Default,
+                                     handler: nil) //You can use a block here to handle a press on this button
+        
+        alertController.addAction(actionOk)
+        presentViewController(alertController, animated: true, completion:nil)
+
+    }
     
     
     
