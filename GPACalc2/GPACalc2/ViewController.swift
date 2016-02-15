@@ -132,6 +132,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return;
             // end invalid input alert
             
+        } else if (checkMaxVals()==false){ // --> checks all max values from the input
+            //Alert to user that there input was invalid and to re check their input
+            let alertTitle = "Alert"
+            let alertMessage = "Max values muxt between 0 and 100! Please check you max numbers!"
+            let alertOkButtonText = "Ok"
+            
+            
+            let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            //We add buttons to the alert controller by creating UIAlertActions:
+            let actionOk = UIAlertAction(title: alertOkButtonText,
+                                         style: .Default,
+                                         handler: nil) //You can use a block here to handle a press on this button
+            
+            alertController.addAction(actionOk)
+            presentViewController(alertController, animated: true, completion:nil)
+            return;
+
+        } else if(checkWeights()==false){ //--> check to ensure that the sum of the percentages = to 100
+            let alertTitle = "Alert"
+            let alertMessage = "Course percentage numbers must sum to 100! Please check your percentage numbers!"
+            let alertOkButtonText = "Ok"
+            
+            
+            let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            //We add buttons to the alert controller by creating UIAlertActions:
+            let actionOk = UIAlertAction(title: alertOkButtonText,
+                                         style: .Default,
+                                         handler: nil) //You can use a block here to handle a press on this button
+            
+            alertController.addAction(actionOk)
+            presentViewController(alertController, animated: true, completion:nil)
+            return;
+
+            
         } else if(classCounter>3){
             
             //Alert to user that no more courses could be added...the maximum course limit has been exceeded
@@ -469,6 +503,45 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //function that furher aids in the above commnent and extends from the code in the "viewDidLoad" method
     func didTapView(){
         self.view.endEditing(true)
+    }
+    
+    //checks and validate user input numebrs for weights
+    func checkWeights() -> Bool{
+        
+        //varibale for the temp weight calculation
+        var assW, midTermW, finalW: Float;
+        
+        //grabs the actual numeric value from the text field--> parses the textField
+        assW = (assTypeWeight.text! as NSString).floatValue;
+        midTermW = (midTermWeight.text! as NSString).floatValue;
+        finalW = (finalPrc.text! as NSString).floatValue;
+        
+        if((assW + midTermW + finalW) != 100){
+            return false; // sum of the wieghts CANNOT equal ANYTHING but 100
+        }
+        else { return true; } //sum of weights == 100
+    }
+    
+    //checks and validate user input numebrs for max types
+    func checkMaxVals() -> Bool{
+        
+        var assM, midTermM, finalM: Float;
+        
+        //grabs the actual numeric value from the text field--> parses the textField
+        assM = (assTypeMax.text! as NSString).floatValue;
+        midTermM = (midTermMax.text! as NSString).floatValue;
+        finalM = (finalMax.text! as NSString).floatValue;
+        
+        if(assM > 100 || assM < 1){
+        return false; //max for field must be between 0 and 100
+        } else if (midTermM > 100 || midTermM < 1){
+        return false; //max for field must be between 0 and 100
+        } else if (finalM > 100 || finalM < 1){
+        return false; //max for field must be between 0 and 100
+        }
+        else { return true; } //all fields have correct ranges
+
+        
     }
     
     
